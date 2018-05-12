@@ -4,11 +4,11 @@ Sprng Bootの学習用リポジトリ
 ## Description
 ### 1_MyBootApp
 Mavenプロジェクトで作成したプロジェクト  
-中身は動作検証
+中身は動作検証用
 
 ### 2_MyBootGApp
 Gradleプロジェクトで作成したプロジェクト  
-中身は動作検証
+中身は動作検証用
 
 ## Usage
 ### Install
