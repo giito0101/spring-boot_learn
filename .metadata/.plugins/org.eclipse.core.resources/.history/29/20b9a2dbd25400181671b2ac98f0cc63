@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta http-equiv="Content-Tyep" content="text/html;" charset="UTF-8" />
+</head>
+<style>
+h1{font-size:18px; font-weight:bold; color:gray;}
+body{font-size:13px;color:gray;margin:5px 25px;}
+pre{font-size:20px;color:gray;padding:5px 10px;border:1px solid gray;}
+</style>
+<body>
+<h1>Hello page</h1>
+<p th:text="${new java.util.Date().toString()}"></p>
+<p th:test="${#dates.format(new java.util.Date(),'dd/MMM/yyyy HH:mm')}"></p>
+<p th:test="${#numbers.formatInteger(1234,7)}"></p>
+<p th:test="${#strings.toUpperCase('Welcom to String.')}"></p>
+</body>
+</html>

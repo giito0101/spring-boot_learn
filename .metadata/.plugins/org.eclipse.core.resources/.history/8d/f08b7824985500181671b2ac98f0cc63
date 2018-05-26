@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta http-equiv="Content-Tyep" content="text/html;" charset="UTF-8" />
+</head>
+<style>
+h1{font-size:18px; font-weight:bold; color:gray;}
+body{font-size:13px;color:gray;margin:5px 25px;}
+pre{font-size:20px;color:gray;padding:5px 10px;border:1px solid gray;}
+</style>
+<body>
+	<h1 th:text="#{content.title}">Helo page</h1>
+	<p><a th:href="@{'/home/' + ${param.id[0]}}">link</a></p>
+</body>
+</html>

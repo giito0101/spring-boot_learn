@@ -1,0 +1,12 @@
+package com.practice.springboot;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HeloController2{
+	@RequestMapping("/")
+	public String index(){
+		return "Hello Spring-Boot World!!";
+	}
+}

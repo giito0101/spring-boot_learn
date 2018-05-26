@@ -1,0 +1,48 @@
+package com.practice.springboot.model;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
+
+import com.practice.springboot.MyData4;
+
+@Repository
+public class MyDataDaoImpl implements MyDataDao<MyData4> {
+	private static final long serialVersionUID = 1L;
+
+	@PersistenceContext
+	private EntityManager entityManager;
+
+	public MyDataDaoImpl(){
+		super();
+	}
+
+	public MyDataDaoImpl(EntityManager manager){
+		this();
+		entityManager = manager;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<MyData4> getAll() {
+		Query query = entityManager.createQuery("from MyData");
+		@SuppressWarnings("unchecked")
+		List<MyData4> list = query.getResultList();
+		entityManager.close();
+		return list;
+	}
+
+	@Override
+	public MyData4 findById(Long id) {
+		return (MyData4)entityManager.createQuery("from MyData where id ="+id).getSingleResult();
+	}
+
+	@SuppressWarnings("uncheckd")
+	@Override
+	public List<MyData4> findByName(String name) {
+		return (List<MyData4>)entityManager.createQuery("from MyData where name = " + name).getResultList();
+	}
+}

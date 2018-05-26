@@ -1,0 +1,11 @@
+package com.practice.springboot;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class HeloController3 {
+	@RequestMapping("/{id}")
+	public int index(@PathVariable int id){
+		return id;
+	}
+}

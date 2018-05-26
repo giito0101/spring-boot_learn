@@ -1,0 +1,9 @@
+package com.practice.springboot;
+
+@RestController
+public class HeloController{
+	@RequestMapping("/")
+	public String index(){
+		retrun "Hello Spring-Boot World!!";
+	}
+}

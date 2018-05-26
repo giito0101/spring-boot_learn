@@ -1,0 +1,12 @@
+package com.practice.springboot;
+
+import java.lang.annotation.ElementType;
+
+public @interface Phone {
+@Documented
+@Constraint(validatedBy=PhoneValidator.class)
+@Target({ ElementType.METHOD, ElementType.FIELD })
+
+
+
+}

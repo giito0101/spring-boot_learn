@@ -1,0 +1,15 @@
+package com.practice.springboot;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HeloController3 {
+	String[] names ={"itoga","daisuke","sachko","ichiro"};
+	String[] mails ={"a@gmail.com","b@yahoo.co.jp","c@yahoo.co.jp","d@yahoo.co.jp"};
+
+//	@RequestMapping("/{id}")
+	public DataObject index(@PathVariable int id){
+		return new DataObject(id,names[id],mails[id]);
+	}
+}

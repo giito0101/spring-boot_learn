@@ -1,0 +1,16 @@
+package test;
+
+import java.util.function.Function;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Integer[] a= {1,2};
+		Function<Integer, String> function = (Integer cm) -> {
+			return Integer.toString(cm / 100) + "メートル";
+		};
+		System.out.println(function.apply(a));
+
+	}
+
+}

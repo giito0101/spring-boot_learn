@@ -1,0 +1,35 @@
+package test;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Consumer;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+		List<String> list = new ArrayList<>();
+        list.add("サ");
+        list.add("ム");
+        list.add("ラ");
+        list.add("イ");
+
+        // forEachメソッド
+        System.out.println("forEachメソッドの場合");
+        list.forEach(s -> System.out.println(s));
+
+        Consumer<String> consumer = string -> System.out.println("Cunsumer : " + string);
+        consumer.accept("hoge");
+
+        Consumer<String> hoge = string -> System.out.println("hoge : " + string);
+        Consumer<String> fuga = string -> System.out.println("fuga : " + string);
+
+        Consumer<String> piyo = hoge.andThen(fuga);
+
+        piyo.accept("piyo");
+
+        Optional<String> hogeOpt = Optional.ofNullable("aaa"); // 値をラップする
+        hogeOpt.ifPresent(hoge2 -> System.out.println(hoge2.length())); // 値が存在する場合のみ実行
+	}
+}

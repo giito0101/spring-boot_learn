@@ -1,0 +1,10 @@
+package com.practice.springboot.model;
+
+import org.springframework.stereotype.Repository;
+
+import com.practice.springboot.MyData4;
+
+@Repository
+public class MyDataDaoImpl extends com.practice.springboot.MyDataDao<MyData4> {
+
+}

@@ -1,0 +1,5 @@
+package com.practice.springboot.model;
+
+public interface MyDataDao extends com.practice.springboot.MyDataDao<MyData> {
+
+}

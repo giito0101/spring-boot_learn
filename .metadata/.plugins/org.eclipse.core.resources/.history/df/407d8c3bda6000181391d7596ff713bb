@@ -1,0 +1,57 @@
+package com.practice.springboot.controller;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.practice.springboot.MyData4;
+import com.practice.springboot.repositories.MyData4Repository;
+
+@Controller
+public class HeloController18 {
+	@Autowired
+	MyData4Repository repository;
+
+	@PostConstruct
+	public void init(){
+		//1つめのダミーデータ作成
+		MyData4 d1 = new MyData4();
+		d1.setName("tuyano");
+		d1.setAge(15);
+		d1.setMail("syoda@tuyano.com");
+		d1.setMemo("090999999");
+		repository.saveAndFlush(d1);
+
+		//２つ目のダミーデータ作成
+		MyData4 d2 = new MyData4();
+		d2.setName("hanako");
+		d2.setAge(120);
+		d2.setMail("hanako@tuyano.com");
+		d2.setMemo("090999999");
+		repository.saveAndFlush(d2);
+
+		//２つ目のダミーデータ作成
+		MyData4 d3 = new MyData4();
+		d3.setName("sachiko");
+		d3.setAge(37);
+		d3.setMail("sachico@tuyano.com");
+		d3.setMemo("090999999");
+		repository.saveAndFlush(d3);
+	}
+
+	@RequestMapping(value="/",method=RequestMethod.GET)
+	public ModelAndView index(
+			ModelAndView mav,
+			@ModelAttribute("formModel") MyData4 mydata4){
+		mav.setViewName("view/index5");
+		mav.addObject("msg","this is sample content.");
+		Iterable<MyData4> list = repository.findAll();
+		mav.addObject("datalist",list);
+		return mav;
+	}
+}
